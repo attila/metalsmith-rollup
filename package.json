@@ -1,0 +1,26 @@
+{
+  "name": "metalsmith-rollup",
+  "version": "0.0.0",
+  "description": "A Rollup plugin for Metalsmith",
+  "main": "./lib/",
+  "scripts": {
+    "lint": "eslint ./lib/",
+    "test": "npm run lint"
+  },
+  "keywords": [
+    "metalsmith",
+    "rollup"
+  ],
+  "repository": {
+    "url": "attila/metalsmith-rollup"
+  },
+  "author": "Attila Beregszaszi <attila@frontseed.com> (http://attilab.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "rollup": "^0.25.7"
+  },
+  "devDependencies": {
+    "eslint": "^2.6.0",
+    "eslint-config-airbnb": "^6.2.0"
+  }
+}

@@ -1,6 +1,6 @@
 # metalsmith-rollup
 
-[![Build status](https://travis-ci.org/attila/metalsmith-rollup.svg)](https://travis-ci.org/attila/metalsmith-rollup)
+[![Build status](https://travis-ci.org/attila/metalsmith-rollup.svg)](https://travis-ci.org/attila/metalsmith-rollup) [![codecov.io](https://codecov.io/github/attila/metalsmith-rollup/coverage.svg?branch=master)](https://codecov.io/github/attila/metalsmith-rollup?branch=master)
 
 A [Rollup](http://rollupjs.org) plugin for [Metalsmith](http://www.metalsmith.io/).
 

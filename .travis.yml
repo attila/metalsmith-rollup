@@ -1,6 +1,7 @@
 sudo: false
 language: node_js
 node_js:
+  - "4"
   - "5"
 cache:
   directories:
@@ -17,3 +18,5 @@ addons:
       - g++-4.8
 before_cache:
   - npm prune
+after_success:
+  - codecov

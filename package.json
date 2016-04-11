@@ -5,7 +5,9 @@
   "main": "./lib/",
   "scripts": {
     "lint": "eslint ./lib/ ./test/",
-    "test": "npm run lint && istanbul cover _mocha -- -R dot test/index.js"
+    "test": "npm run lint && npm run coverage",
+    "test:unit": "mocha -R dot test/index.js",
+    "coverage": "istanbul cover _mocha -- -R dot test/index.js"
   },
   "keywords": [
     "metalsmith",

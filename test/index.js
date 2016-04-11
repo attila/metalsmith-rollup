@@ -7,7 +7,6 @@ var rollup = require('../lib/');
 describe('metalsmith-rollup', function () {
   it('should roll up basic', function (done) {
     (new Metalsmith('test/fixtures/basic')).
-      ignore(path.resolve(__dirname, 'fixtures/basic/src/**.js')).
       use(rollup({
         entry: path.resolve(__dirname, 'fixtures/basic/src/main.js'),
         format: 'iife',
@@ -17,8 +16,28 @@ describe('metalsmith-rollup', function () {
         if (err) {
           return done(err);
         }
-        assert.equal(Object.keys(files).length, 2);
+        assert.equal(Object.keys(files).length, 4);
         assertDir('test/fixtures/basic/expected', 'test/fixtures/basic/build');
+        return done(null);
+      });
+  });
+
+  it('should roll up with source map', function (done) {
+    (new Metalsmith('test/fixtures/sourcemap')).
+      use(rollup({
+        entry: path.resolve(__dirname, 'fixtures/sourcemap/src/main.js'),
+        format: 'iife',
+        dest: 'bundle.js',
+        sourceMap: true
+      }, {
+        ignoreSources: true
+      })).
+      build(function (err, files) {
+        if (err) {
+          return done(err);
+        }
+        assert.equal(Object.keys(files).length, 3);
+        assertDir('test/fixtures/sourcemap/expected', 'test/fixtures/sourcemap/build');
         return done(null);
       });
   });

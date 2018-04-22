@@ -17,15 +17,15 @@ Currently only the JavaScript API is supported. CLI Usage via `metalsmith.json` 
 In your build file:
 
 ```js
-var Metalsmith = require('metalsmith');
-var rollup = require('metalsmith-rollup');
+const Metalsmith = require('metalsmith')
+const rollup = require('metalsmith-rollup')
 
 Metalsmith(__dirname).
   use(rollup({
     entry: 'src/js/main.js', // Entry point
     dest: 'js/bundle.js', // This will be placed under "build/"
   })).
-  build();
+  build()
 
 ```
 
@@ -40,7 +40,7 @@ Metalsmith(__dirname).
   }, {
     ignoreSources: true
   })).
-  build();
+  build()
 
 ```
 

@@ -4,7 +4,8 @@
   "description": "A Rollup plugin for Metalsmith",
   "main": "./lib/",
   "scripts": {
-    "lint": "eslint ./lib/ ./test/",
+    "commit": "git-cz",
+    "lint": "standard",
     "test": "npm run lint && npm run coverage",
     "test:unit": "mocha -R dot test/index.js",
     "coverage": "istanbul cover _mocha -- -R dot test/index.js && codecov"
@@ -24,10 +25,16 @@
   "devDependencies": {
     "assert-dir-equal": "^1.0.1",
     "codecov": "1.0.1",
-    "eslint": "^2.6.0",
-    "eslint-config-airbnb": "^6.2.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "istanbul": "^0.4.3",
     "metalsmith": "^2.1.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "standard": "^11.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

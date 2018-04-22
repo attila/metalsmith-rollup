@@ -1,5 +1,4 @@
-.eslintrc
 .idea
-.travis.yml
-test
-coverage
+coverage.lcov
+.nyc_output
+yarn-*.log*

@@ -6,9 +6,9 @@
   "scripts": {
     "commit": "git-cz",
     "lint": "standard",
-    "test": "npm run lint && npm run coverage",
-    "test:unit": "mocha -R dot test/index.js",
-    "coverage": "istanbul cover _mocha -- -R dot test/index.js && codecov"
+    "test": "yarn run lint && yarn run test:unit && yarn -s run report-coverage",
+    "test:unit": "nyc mocha -R dot",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "keywords": [
     "metalsmith",
@@ -24,17 +24,28 @@
   },
   "devDependencies": {
     "assert-dir-equal": "^1.0.1",
-    "codecov": "^1.0.1",
+    "codecov": "^3.0.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
-    "istanbul": "^0.4.3",
     "metalsmith": "^2.1.0",
     "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "standard": "^11.0.1"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 90,
+    "include": [
+      "lib/**/*.js"
+    ]
   }
 }

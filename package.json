@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-rollup",
-  "version": "0.2.0",
+  "version": "0.0.0-development",
   "description": "A Rollup plugin for Metalsmith",
   "main": "./lib/",
   "scripts": {
@@ -15,7 +15,8 @@
     "rollup"
   ],
   "repository": {
-    "url": "attila/metalsmith-rollup"
+    "type": "git",
+    "url": "https://github.com/attila/metalsmith-rollup.git"
   },
   "author": "Attila Beregszaszi <attila@frontseed.com> (http://attilab.com/)",
   "license": "MIT",
@@ -30,7 +31,9 @@
     "metalsmith": "^2.1.0",
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
-    "standard": "^11.0.1"
+    "semantic-release": "^15.1.7",
+    "standard": "^11.0.1",
+    "travis-deploy-once": "^4.4.1"
   },
   "config": {
     "commitizen": {

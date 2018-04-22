@@ -1,20 +1,14 @@
-sudo: false
 language: node_js
-node_js:
-  - "4"
-  - "5"
 cache:
+  yarn: true
   directories:
-    - node_modules
+    - ~/.npm
 notifications:
   email: false
-env:
-  - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-before_cache:
-  - npm prune
+node_js:
+  - '8'
+after_success:
+  - yarn run travis-deploy-once "yarn run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

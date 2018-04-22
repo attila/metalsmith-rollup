@@ -17,15 +17,17 @@ Currently only the JavaScript API is supported. CLI Usage via `metalsmith.json` 
 In your build file:
 
 ```js
-var Metalsmith = require('metalsmith');
-var rollup = require('metalsmith-rollup');
+const Metalsmith = require('metalsmith')
+const rollup = require('metalsmith-rollup')
 
 Metalsmith(__dirname).
   use(rollup({
-    entry: 'src/js/main.js', // Entry point
-    dest: 'js/bundle.js', // This will be placed under "build/"
+    input: 'src/js/main.js', // Entry point
+    output: {
+      dest: 'js/bundle.js' // This will be placed under "build/"
+    }
   })).
-  build();
+  build()
 
 ```
 
@@ -34,13 +36,15 @@ Source map generation is supported. Processed source files can be ignored automa
 ```js
 Metalsmith(__dirname).
   use(rollup({
-    entry: 'src/js/main.js',
-    dest: 'js/bundle.js',
-    sourceMap: true
+    input: 'src/js/main.js',
+    output: {
+      dest: 'js/bundle.js',
+      sourcemap: true
+    }
   }, {
     ignoreSources: true
   })).
-  build();
+  build()
 
 ```
 

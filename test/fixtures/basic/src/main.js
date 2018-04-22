@@ -1,3 +1,3 @@
-import { cube } from './maths';
+import { cube } from './maths'
 
-console.log(cube(5));
+console.log(cube(5))

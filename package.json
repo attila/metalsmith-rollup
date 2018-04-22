@@ -1,33 +1,54 @@
 {
   "name": "metalsmith-rollup",
-  "version": "0.2.0",
+  "version": "0.0.0-development",
   "description": "A Rollup plugin for Metalsmith",
   "main": "./lib/",
   "scripts": {
-    "lint": "eslint ./lib/ ./test/",
-    "test": "npm run lint && npm run coverage",
-    "test:unit": "mocha -R dot test/index.js",
-    "coverage": "istanbul cover _mocha -- -R dot test/index.js && codecov"
+    "commit": "git-cz",
+    "lint": "standard",
+    "test": "yarn run lint && yarn run test:unit && yarn -s run report-coverage",
+    "test:unit": "nyc mocha -R dot",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "keywords": [
     "metalsmith",
     "rollup"
   ],
   "repository": {
-    "url": "attila/metalsmith-rollup"
+    "type": "git",
+    "url": "https://github.com/attila/metalsmith-rollup.git"
   },
   "author": "Attila Beregszaszi <attila@frontseed.com> (http://attilab.com/)",
   "license": "MIT",
   "dependencies": {
-    "rollup": "^0.25.7"
+    "rollup": "^0.58.1"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.0.1",
-    "codecov": "1.0.1",
-    "eslint": "^2.6.0",
-    "eslint-config-airbnb": "^6.2.0",
-    "istanbul": "^0.4.3",
+    "codecov": "^3.0.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "metalsmith": "^2.1.0",
-    "mocha": "^2.4.5"
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
+    "semantic-release": "^15.1.7",
+    "standard": "^11.0.1",
+    "travis-deploy-once": "^4.4.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 90,
+    "include": [
+      "lib/**/*.js"
+    ]
   }
 }

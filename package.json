@@ -21,7 +21,7 @@
   "author": "Attila Beregszaszi <attila@frontseed.com> (http://attilab.com/)",
   "license": "MIT",
   "dependencies": {
-    "rollup": "^0.25.7"
+    "rollup": "^0.58.1"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.0.1",

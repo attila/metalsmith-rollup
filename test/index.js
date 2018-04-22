@@ -9,9 +9,11 @@ describe('metalsmith-rollup', () => {
   it('rolls up basic', () => {
     (new Metalsmith('test/fixtures/basic'))
       .use(rollup({
-        entry: path.resolve(__dirname, 'fixtures/basic/src/main.js'),
-        format: 'iife',
-        dest: 'bundle.js'
+        input: path.resolve(__dirname, 'fixtures/basic/src/main.js'),
+        output: {
+          format: 'iife',
+          file: 'bundle.js'
+        }
       }))
       .build((err, files) => {
         if (err) throw err
@@ -23,10 +25,12 @@ describe('metalsmith-rollup', () => {
   it('rolls up with source map', () => {
     (new Metalsmith('test/fixtures/sourcemap'))
       .use(rollup({
-        entry: path.resolve(__dirname, 'fixtures/sourcemap/src/main.js'),
-        format: 'iife',
-        dest: 'bundle.js',
-        sourceMap: true
+        input: path.resolve(__dirname, 'fixtures/sourcemap/src/main.js'),
+        output: {
+          format: 'iife',
+          file: 'bundle.js',
+          sourcemap: true
+        }
       }, {
         ignoreSources: true
       }))
@@ -40,9 +44,11 @@ describe('metalsmith-rollup', () => {
   it('reports errors', () => {
     (new Metalsmith('test/fixtures/basic'))
       .use(rollup({
-        entry: path.resolve(__dirname, 'fixtures/faulty/src/main.js'),
-        format: 'iife',
-        dest: 'bundle.js'
+        input: path.resolve(__dirname, 'fixtures/faulty/src/main.js'),
+        output: {
+          format: 'iife',
+          file: 'bundle.js'
+        }
       }))
       .build(err => {
         assert(err.message.includes('Could not resolve ./mathz'))

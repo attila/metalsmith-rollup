@@ -1,20 +1,7 @@
-sudo: false
 language: node_js
 node_js:
-  - "4"
-  - "5"
-cache:
-  directories:
-    - node_modules
+  - "6"
+  - "8"
+cache: yarn
 notifications:
   email: false
-env:
-  - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-before_cache:
-  - npm prune

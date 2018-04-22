@@ -24,12 +24,12 @@
   },
   "devDependencies": {
     "assert-dir-equal": "^1.0.1",
-    "codecov": "1.0.1",
+    "codecov": "^1.0.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "istanbul": "^0.4.3",
     "metalsmith": "^2.1.0",
-    "mocha": "^2.4.5",
+    "mocha": "^5.1.1",
     "standard": "^11.0.1"
   },
   "config": {

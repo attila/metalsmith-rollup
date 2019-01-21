@@ -24,7 +24,8 @@ Metalsmith(__dirname).
   use(rollup({
     input: 'src/js/main.js', // Entry point
     output: {
-      dest: 'js/bundle.js' // This will be placed under "build/"
+      dest: 'js/bundle.js', // This will be placed under in your "destination" dir
+      format: 'iife'
     }
   })).
   build()
@@ -39,6 +40,7 @@ Metalsmith(__dirname).
     input: 'src/js/main.js',
     output: {
       dest: 'js/bundle.js',
+      format: 'cjs',
       sourcemap: true
     }
   }, {

@@ -21,14 +21,15 @@
   "author": "Attila Beregszaszi <attila@frontseed.com> (http://attilab.com/)",
   "license": "MIT",
   "dependencies": {
-    "rollup": "^0.58.1"
+    "rollup": "^1.1.0"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.0.1",
     "codecov": "^3.0.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
-    "metalsmith": "^2.1.0",
+    "debug": "^4.1.1",
+    "metalsmith": "^2.2.0",
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
     "semantic-release": "^15.1.7",
